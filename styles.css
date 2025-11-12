@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  /* Змінні для кольорів */
+  --color-primary: #114581;     /* Темно-синій для тексту */
+  --color-secondary: #5a6a7c;   /* Сірий для параграфів */
+  --color-accent: #f57a3b;      /* Помаранчевий для кнопок */
+  --color-bg-light: #f4f8fc;   /* Світло-блакитний фон (Hero) */
+  --color-bg-white: #ffffff;   /* Білий фон (Картки) */
+  --color-bg-dark: #2c2c2c;     /* Темний фон (Для footer) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif; 
+  background: var(--color-bg-white);
+  color: var(--color-secondary);
+  line-height: 1.6; /* Міжрядковий інтервал */
+  scroll-behavior: smooth; /* Плавний скрол при переході по посиланнях */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  text-decoration: none; /* Прибираємо підкреслення у посилань */
+  color: var(--color-accent);
+}
+
+.header {
+  background: var(--color-bg-white);
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Легка тінь, щоб header був "над" контентом */
+  position: relative;
+}
+
+.container {
+  width: 90%; /* На смартфоні контент займає 90% екрана */
+  max-width: 1100px; /* Максимальна ширина для десктопу (на майбутнє) */
+  margin: 0 auto; /* Центрування */
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between; /* Лого зліва, бургер-меню справа */
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px; 
+}
+
+.nav {
+  display: none; /* Меню приховане за замовчуванням */
+  position: absolute; /* Воно "випадає" з потоку */
+  top: 65px; /* З'являється трохи нижче хедера (65px - це приблизна висота хедера) */
+  right: 5%; /* Прив'язка до правого краю (де кнопка) */
+  width: 90%; /* Ширина на мобільному */
+  max-width: 320px; /* Макс. ширина на десктопі (щоб не було занадто широким) */
+  background: var(--color-bg-white);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Гарна тінь */
+  border: 1px solid #eee;
+  z-index: 100; /* Гарантує, що меню буде над усім контентом */
+}
+
+.nav.nav-active {
+  display: block;
+}
+
+.nav ul {
+  list-style: none; /* Прибираємо маркери списку */
+  display: flex;
+  flex-direction: column; /* Вишиковуємо посилання вертикально */
+}
+
+.nav li {
+  border-bottom: 1px solid #f0f0f0; /* Розділювач між посиланнями */
+}
+.nav li:last-child {
+  border-bottom: none; /* Останньому посиланню розділювач не потрібен */
+}
+
+.nav li a {
+  display: block; /* Щоб посилання займало весь рядок */
+  padding: 16px 20px;
+  color: var(--color-primary);
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.nav li a:hover {
+  background-color: var(--color-bg-light); /* Легкий ефект при наведенні */
+}
+
+/* Стилізуємо кнопку "Завантажити" всередині меню */
+.nav .btn-download {
+  margin: 15px 20px; /* Відступи для кнопки */
+  text-align: center;
+  padding: 12px;
+  background-color: var(--color-accent);
+  color: white;
+  display: block;
+}
+.nav .btn-download:hover {
+  background-color: #e06c30;
+}
+
+/* Кнопка-бургер (прибираємо стилі кнопки) */
+.nav-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle img {
+  width: 28px;
+}
+
+/* Загальні стилі для секцій "Герой" та "Послуги" */
+.hero, .services {
+  padding: 50px 0; /* 50px зверху/знизу, 0 з боків */
+  text-align: center;
+}
+
+.hero {
+  background: var(--color-bg-light);
+}
+
+.services {
+  background: var(--color-bg-light);
+  position: relative;
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 колонка */
+  gap: 30px; /* Відстань між картками */
+}
+
+.services::before {
+  content: ""; /* Обов'язково для ::before */
+  position: absolute;
+  background: var(--color-accent); /* Наш помаранчевий колір */
+  width: 100%; /* На всю ширину */
+  left: 0;
+  z-index: 1; /* Знаходиться за картками (у яких z-index: 2) */  
+  top: 60px;     /* Трохи відступаємо від верху секції */
+  height: 350px; /* Приблизна висота, щоб покрити першу картку */
+}
+
+.footer {
+  background: var(--color-bg-dark);
+  color: #ccc; /* Світло-сірий текст у футері */
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  line-height: 1.5;
+}
+
+.hero h2 {
+  font-size: 2.2rem; /* Розмір заголовка */
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1rem;
+  max-width: 600px; /* Обмежуємо ширину параграфа */
+  margin: 0 auto; /* Центруємо його */
+}
+
+/* Стиль для однієї картки */
+.service-card {
+  background: var(--color-bg-white);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;  
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* М'яка тінь */
+  position: relative; 
+  z-index: 2;
+  display: flex; /* Для вирівнювання кнопок */
+  flex-direction: column;
+}
+
+.service-card .btn {
+  margin-top: auto; /* Кнопка займатиме увесь вільний простір згори*/
+}
+
+.service-card img { 
+  max-width: 300px;  /* Обмежуємо ширину картинок, щоб вони не заповнювали картку */
+  margin: 0 auto 20px auto; /* Центруємо і додаємо відступ знизу */  
+}
+
+.service-card h3 {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Стиль для кнопки (багаторазовий) */
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-bg-white);
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Плавний ефект */
+}
+
+.btn:hover {
+  background: #e06c30; /* Трохи темніший помаранчевий */
+}
+
+@media (min-width: 992px) {
+  
+  .hero {
+    padding: 80px 0; /* Збільшуємо відступи */
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 3rem; /* Збільшуємо шрифт заголовка */
+  }
+
+  .hero p {
+    font-size: 1.1rem; /* Збільшуємо шрифт параграфа */
+  }
+  
+  .services .container {    
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки для десктопу */     
+    gap: 30px; /* Збільшуємо відстань між картками для десктопу */
+  }
+
+  .services::before {
+    /* Нова висота для десктопу */
+    height: 300px; 
+    
+    /* Нове позиціонування: центруємо по вертикалі */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .services {
+    padding: 80px 0;
+  }
+}

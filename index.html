@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clash Royale - Фан-сторінка</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">      
+        <img class="logo-img" src="images/logo.svg" alt="Clash Royale Logo">      
+
+      <nav class="nav">
+        <ul>
+            <li><a href="#hero">На Головну</a></li>
+            <li><a href="#features">Особливості</a></li>   
+            <li><a href="#about">Про сайт</a></li> 
+        </ul>
+      </nav>
+      
+      <button class="nav-toggle" aria-label="Відкрити меню">
+        <img src="images/burger-menu.svg" alt="Меню"/>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <h2>Clash Royale</h2>
+        <p>Епічні битви в реальному часі у всесвіті Clash. Збирай десятки карток, створюй непереможну колоду та руйнуй вежі супротивника!</p>
+      </div>
+    </section>
+
+    <section class="services" id="features">
+      <div class="container">
+        
+        <article class="service-card">
+          <img src="images/barbarrian.png" alt="Ілюстрація колоди карт Clash Royale"/>
+          <h3>Збирай Колоду</h3>
+          <p>Десятки унікальних воїнів, заклять та захисних споруд. Відкрий їх усіх та створи свій унікальний стиль гри.</p>
+          <a href="https://support.supercell.com/clash-royale/en/articles/cards-and-decks-2.html" class="btn" target="_blank">Всі Картки</a>
+        </article>
+
+        <article class="service-card">
+          <img src="images/battle.png" alt="Ілюстрація битви на арені">
+          <h3>Бийся на Арені</h3>
+          <p>Кидай виклик гравцям з усього світу в динамічних 1v1 та 2v2 битвах. Тільки стратегія та швидкість приведуть до перемоги.</p>
+          <a href="https://supercell.com/en/games/clashroyale/" class="btn" target="_blank">Почати Бій</a>
+        </article>
+
+        <article class="service-card" id="clans">
+          <img src="images/clan-shield.webp" alt="Ілюстрація кланового щита">
+          <h3>Вступай до Клану</h3>
+          <p>Створи клан або приєднайся до існуючого. Ділись картками, тренуйся з друзями та воюй разом у Війнах Кланів за неймовірні нагороди.</p>
+          <a href="https://royaleapi.com/clans" class="btn" target="_blank">Знайти Клан</a>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="about">
+    <div class="container">
+      <p>© 2025 Supercell. Всі права захищені. <br>Цей контент не є офіційним і не підтримується Supercell.</p>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
