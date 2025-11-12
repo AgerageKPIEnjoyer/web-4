@@ -112,6 +112,7 @@ a {
   color: white;
   display: block;
 }
+
 .nav .btn-download:hover {
   background-color: #e06c30;
 }
@@ -151,9 +152,9 @@ a {
 .services::before {
   content: ""; /* Обов'язково для ::before */
   position: absolute;
-  background: var(--color-accent); /* Наш помаранчевий колір */
-  width: 100%; /* На всю ширину */
+  background: var(--color-accent); /* Наш помаранчевий колір */  
   left: 0;
+  right: 0;
   z-index: 1; /* Знаходиться за картками (у яких z-index: 2) */  
   top: 60px;     /* Трохи відступаємо від верху секції */
   height: 350px; /* Приблизна висота, щоб покрити першу картку */
@@ -202,7 +203,7 @@ a {
 }
 
 .service-card img { 
-  max-width: 300px;  /* Обмежуємо ширину картинок, щоб вони не заповнювали картку */
+  max-width: 200px;  /* Обмежуємо ширину картинок, щоб вони не заповнювали картку */
   margin: 0 auto 20px auto; /* Центруємо і додаємо відступ знизу */  
 }
 
